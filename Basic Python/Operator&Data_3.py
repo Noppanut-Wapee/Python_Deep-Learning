@@ -12,6 +12,7 @@ print(f'ค่าเฉลี่ย = {ave}')
 
 '''
 '''
+#การแยกเลข
 n = int(input('ใส่เลขสี่หลัก:'))
 x = n
 x //=1000
@@ -32,7 +33,7 @@ x %=10
 print (x)
 
 '''
-
+'''
 import math
 import random
 
@@ -41,3 +42,5 @@ print('',random.randint(1,10))
 print ('',random.random())
 print('',random.uniform(10,100))
 print('',random.choice('123456789'))
+
+'''
