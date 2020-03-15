@@ -32,7 +32,8 @@ count = {'one':'หนึ่ง','two':'สอง','three':'สาม'}
 print(count.get('three')) # get อ่านค่า Value ตามที่ key กำหนด
 print(count.pop('two')) # pop อ่านค่า Valie ตาม key แล้วลบค่าที่อ่านด้วย
 print(len(count)) # 2
-print(count.items()) # 'two':'สอง' หายไปแล้ววววว
+print(count.items()) # 'two':'สอง' หายไปแล้วววว
+
 
 
 
