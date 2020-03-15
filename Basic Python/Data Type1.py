@@ -45,14 +45,48 @@ b = a[2:5] ;print(b) # [2, 3, 4] ตัดตัวท้าย แต่ไม�
 print(a[2:]) #[2, 3, 4, 5, 6, 7, 8]
 print(a[:7]) #[0, 1, 2, 3, 4, 5, 6] 
 
+# function builtin & LIST
 
+a = [0,1,2,3,4,5,6,7,8,9]
+print(len(a)) #นับได้ 10 ตัว 
+print(sum(a)) #รวม 45
 
+b = ['abcABCe']
+print(len(b)) # นับได้ 1 ตัว 
 
+b = list('abcABCe') ; print(len(b)) # 7 ตัว 
 
+c = [100,400,200,123]
+print(max(c)) #max 400
+print(min(c)) #min 100
 
+h = [10,11,12,13,14,15,16,17]
+print(h)
+count1 = 0
 
+for i in range(0,len(h)):
+    if h[i]%2 == 0:
+        count1 += 1
+        print(h[i])
+# enumerate (index,value)
+g = [108,1009,7,11]
+for (i,v) in enumerate(g):
+    print(f'{i}-{v}') #(index,value)
 
+#append
+a = [1,2,3,4]
+a.append(4); print(a) #[1, 2, 3, 4, 4]
 
+# Ex ปีเกิด
+constellations = ['ชวด','ฉลู','เถาะ','ขาล','มะโรง',',มะเส็ง','มะเมีย',',มะแม','วอก','ระกา','จอ','กุน']
 
+#year = int(input('ปี พ.ศ.ของคุณคือ:'))
+#print('ปีเกิดของคุณ:', constellations[(year+5)%12] )
 
+# List array 2 D
+nums = [[1,2,3],[4,5,6]]
+print(nums[0]) #1, 2, 3]
+print(nums[0][1]) #2
+print(len(nums)) #2
+print(len(nums[1])) #3
 
