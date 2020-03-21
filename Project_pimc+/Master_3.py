@@ -1,5 +1,6 @@
 # import the necessary packages
 from imutils.perspective import four_point_transform
+# library imutils ใช้เกี่ยวกัว ปรับภาพ รีขนาดภาพ
 from imutils import contours
 import imutils
 import cv2
@@ -20,28 +21,36 @@ DIGITS_LOOKUP = {
 }
 
 # load the example image
-image = cv2.imread('/Users/noppanutwapee/Desktop/Python_Deep-Learning/Project_pimc+/Pic Test/meter1.jpg')
+image = cv2.imread('/Users/noppanutwapee/Desktop/Python_Deep-Learning/Project_pimc+/Pic Test/t1.jpg')
 # pre-process the image by resizing it, converting it to
 # graycale, blurring it, and computing an edge map
-image = imutils.resize(image, height=500)
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+# library imutils ใช้เกี่ยวกัว ปรับภาพ รีขนาดภาพ
+# ปรับรูป ขนาด 500 pixle
+image = imutils.resize(image, height=500) 
+# การวิเคราะห์รูปจะต้องแปลงให้เป็น gray scale 0-255
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) 
+# Gaussian การใส่ noise เข้าไปในภาพ จะทำให้ง่ายต่อการกรองภาพ Gaussian filter kernel 
+blurred = cv2.GaussianBlur(gray, (5, 5), 0) 
+# Canny edge detector เป็นวิธีตรวจจับความกว้างในขอบภาพ
 edged = cv2.Canny(blurred, 50, 200, 255)
 '''
-cv2.imshow('test',gray)
+cv2.imshow('Original pic',image)
 cv2.waitKey(0)
-cv2.imshow('test',blurred)
+cv2.imshow('gray',gray)
 cv2.waitKey(0)
-cv2.imshow('test',edged)
+cv2.imshow('blurred',blurred)
+cv2.waitKey(0)
+cv2.imshow('edged',edged)
 cv2.waitKey(0)
 '''
+# เมื่อกี้เป็นกระบวนการการเตรียมรูป
 # find contours in the edge map, then sort them by their
 # size in descending order
-cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
-	cv2.CHAIN_APPROX_SIMPLE)
+cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 cnts = imutils.grab_contours(cnts)
 cnts = sorted(cnts, key=cv2.contourArea, reverse=True)
 displayCnt = None
+
 
 # loop over the contours
 for c in cnts:
@@ -57,6 +66,8 @@ for c in cnts:
 
 # extract the thermostat display, apply a perspective transform
 # to it
+
+
 warped = four_point_transform(gray, displayCnt.reshape(4, 2))
 output = four_point_transform(image, displayCnt.reshape(4, 2))
 
@@ -65,6 +76,7 @@ cv2.imshow('test',warped)
 cv2.imshow('test1',output)
 cv2.waitKey(0)
 
+'''
 # threshold the warped image, then apply a series of morphological
 # operations to cleanup the thresholded image
 thresh = cv2.threshold(warped, 0, 255,
@@ -99,6 +111,8 @@ print(len(cnts))
 #if len(cnts) > 0:
  #   cnts = contours.sort_contours(cnts)[0]
  #   digitCnts = cnts
+
+'''
 '''
 # sort the contours from left-to-right, then initialize the
 # actual digits themselves
