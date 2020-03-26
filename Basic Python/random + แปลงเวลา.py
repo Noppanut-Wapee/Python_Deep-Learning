@@ -1,7 +1,7 @@
 import math
 import random
 
-a = random.randint(100000,1000000)
+a = random.randint(1,1000000)
 print(a)
 #a = 74913
 b = a//3600
