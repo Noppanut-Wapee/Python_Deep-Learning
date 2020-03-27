@@ -1,4 +1,4 @@
-
+'''
 def num_layers(n):
 	#print(n)
     total = pow(2,n)*(0.0005)
@@ -11,3 +11,12 @@ def num_layers(n):
 
 num_layers(100)
 #print(total)
+'''
+
+def num_layers(n):
+    a = format(pow(2,n)*(0.0005))
+    return a+'m' 
+    
+num_layers(100)
+
+
