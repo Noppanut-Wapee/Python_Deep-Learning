@@ -13,6 +13,7 @@ def count_vowels(txt):
         sum += txt.lower().count(s[i])
     return sum
 
-count_vowels('Prediction')
+count_vowels('Prediction') #4 
+
 
 
