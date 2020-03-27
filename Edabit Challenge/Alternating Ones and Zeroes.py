@@ -17,7 +17,7 @@ def can_alternate(s):
         print('False')
         return False
 
-can_alternate('010001')
+can_alternate('010001')   
     
     
     
