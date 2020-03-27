@@ -18,7 +18,7 @@ def XO(txt):
     elif a != b :
         return False
 
-
+# สั้นๆเลย 555
 def XO(text):
   return text.lower().count('x') == text.lower().count('o')
 	
