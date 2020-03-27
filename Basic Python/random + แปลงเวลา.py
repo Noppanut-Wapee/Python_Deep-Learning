@@ -62,14 +62,12 @@ if __name__ == "__main__":
         
     
 
-    # Python code to demonstrate naive method 
-# to compute factorial 
-n = int(input('ใส่เลข Fac:'))
+n = int(input('ใส่เลขที่อยากรู้ค่า Fac:'))
 
 fact = 1
 
 for i in range(1,n+1): 
 	fact = fact * i 
 	
-print ("The factorial is {n}:{fact}  ".format(n=n,fact=fact)) 
-print (fact) 
+print ("ค่าของ Fac {n}: คือ: {fact}  ".format(n=n,fact=fact)) 
+
