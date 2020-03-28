@@ -1,5 +1,4 @@
-list2 = list([1,2,3,4,5])
-
+#mทำแบบเข้าใจโจทย์ผิด 555 
 def find_even_nums(num):
     if num%2 == 0:
         num = num
