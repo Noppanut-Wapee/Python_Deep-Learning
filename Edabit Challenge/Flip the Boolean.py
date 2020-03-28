@@ -7,9 +7,6 @@ reverse(0) ➞ "boolean expected"
 
 reverse(None) ➞ "boolean expected"
 
-def counterpartCharCode(char):
-	return ord(char.swapcase())
-
 """
 
 def reverse(arg):
