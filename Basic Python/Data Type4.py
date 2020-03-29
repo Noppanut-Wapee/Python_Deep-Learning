@@ -1,3 +1,4 @@
+
 # Dictionary จะมี Key,Value ใช้ {}
 # Key จะเป็น String หรือ Int ก็ได้ แต่ห้ามซ้ากัน
 # Value เป็นข้อมูลชนิดใดก็ได้
@@ -21,6 +22,7 @@ a = 'th' in countries ;print(a) #True
 print(len(countries)) #3
 del countries['kr']
 print(len(countries)) #2
+
 
 # function item
 info = {'name':'jhon', 'age':30 ,'height':170,'single':True}
