@@ -1,3 +1,4 @@
+''' 
 def simon_says(lst1, lst2):
     nums = 0
     total = 0 
@@ -40,3 +41,9 @@ b = [5, 9, 9, 9, 9]
 
 print(a[:-1])
 print(b[1:])
+'''
+def difference_max_min(lst):
+    return print(max(lst) - min(lst))
+
+#
+difference_max_min([10,4,1,2,8,91])
